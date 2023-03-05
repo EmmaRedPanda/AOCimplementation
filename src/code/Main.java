@@ -1,3 +1,9 @@
+package code;
+
+import code.implementations.Afficheur;
+import code.implementations.Canal;
+import code.implementations.CapteurImpl;
+
 import java.util.concurrent.*;
 
 public class Main {
@@ -26,7 +32,7 @@ public class Main {
                 () -> {
                     runTick.cancel(true);
                     System.out.println("aff 1 : " + aff1.anciensAff + "\naff 2 : " + aff2.anciensAff +"\naff 3 : " + aff3.anciensAff);},
-                10000 ,
+                20000 ,
                 TimeUnit.MILLISECONDS);
 
 

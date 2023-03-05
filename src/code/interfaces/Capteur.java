@@ -1,3 +1,5 @@
+package code.interfaces;
+
 public interface Capteur {
 
     public void attach(ObserveurDeCapteurAsync obs);

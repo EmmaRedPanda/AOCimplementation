@@ -1,3 +1,5 @@
+package code.interfaces;
+
 import java.util.concurrent.ExecutionException;
 
 public interface ObserveurDeCapteur {

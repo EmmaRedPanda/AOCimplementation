@@ -1,7 +1,12 @@
+package code.implementations;
+
+import code.interfaces.CapteurAsync;
+import code.interfaces.ObserveurDeCapteur;
+
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class Afficheur implements ObserveurDeCapteur{
+public class Afficheur implements ObserveurDeCapteur {
 
     public Integer aff = 0;
 

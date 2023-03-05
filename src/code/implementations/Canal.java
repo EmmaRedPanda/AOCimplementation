@@ -1,6 +1,11 @@
+package code.implementations;
+
+import code.interfaces.CapteurAsync;
+import code.interfaces.ObserveurDeCapteurAsync;
+
 import java.util.concurrent.*;
 
-public class Canal implements CapteurAsync, ObserveurDeCapteurAsync{
+public class Canal implements CapteurAsync, ObserveurDeCapteurAsync {
 
     public ScheduledExecutorService exec;
     public Afficheur aff;
@@ -18,6 +23,11 @@ public class Canal implements CapteurAsync, ObserveurDeCapteurAsync{
         long monDelai = ThreadLocalRandom.current().nextLong(500,1500);
         return exec.schedule(() -> {return cap.getValue();}, monDelai, TimeUnit.MILLISECONDS);
 
+    }
+
+    @Override
+    public boolean getCapteurStatus() {
+        return this.cap.attente;
     }
 
     @Override
