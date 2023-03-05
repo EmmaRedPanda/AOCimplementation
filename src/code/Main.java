@@ -13,9 +13,9 @@ public class Main {
 
         ScheduledExecutorService exec = Executors.newScheduledThreadPool(15);
 
-        Afficheur aff1 = new Afficheur();
-        Afficheur aff2 = new Afficheur();
-        Afficheur aff3 = new Afficheur();
+        Afficheur aff1 = new Afficheur("aff1");
+        Afficheur aff2 = new Afficheur("aff2");
+        Afficheur aff3 = new Afficheur("aff3");
 
         CapteurImpl cap1 = new CapteurImpl();
 
@@ -31,7 +31,7 @@ public class Main {
         exec.schedule(
                 () -> {
                     runTick.cancel(true);
-                    System.out.println("aff 1 : " + aff1.anciensAff + "\naff 2 : " + aff2.anciensAff +"\naff 3 : " + aff3.anciensAff);},
+                    System.out.println("final aff1 : " + aff1.anciensAff + "\nfinal aff2 : " + aff2.anciensAff +"\nfinal aff3 : " + aff3.anciensAff);},
                 20000 ,
                 TimeUnit.MILLISECONDS);
 

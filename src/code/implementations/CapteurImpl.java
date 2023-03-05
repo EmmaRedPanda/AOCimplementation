@@ -33,7 +33,7 @@ public class CapteurImpl implements Capteur {
 
         if (!attente) {
             valeur++;
-            System.out.println("valeur : "+valeur);
+            System.out.println("valeur envoyee : "+valeur);
             algo1.execute(this);
         }
         algo1.verifie(this);
