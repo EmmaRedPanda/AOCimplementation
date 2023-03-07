@@ -28,12 +28,18 @@ public class Main {
         cap1.attach(can3);
 
         final ScheduledFuture<?> runTick = exec.scheduleAtFixedRate(cap1::tick, 0, 500, TimeUnit.MILLISECONDS);
-        exec.schedule(
+        /*exec.schedule(
                 () -> {
                     runTick.cancel(true);
                     System.out.println("final aff1 : " + aff1.anciensAff + "\nfinal aff2 : " + aff2.anciensAff +"\nfinal aff3 : " + aff3.anciensAff);},
                 20000 ,
-                TimeUnit.MILLISECONDS);
+                TimeUnit.MILLISECONDS);*/
+        exec.scheduleAtFixedRate(
+                () -> {
+                    if ((cap1.valeur) == (int) 6) {
+                        runTick.cancel(true);
+                    }
+                }, 0, 500, TimeUnit.MILLISECONDS);
 
 
     }
