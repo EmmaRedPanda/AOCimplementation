@@ -12,4 +12,4 @@ Le code de mon projet suit le fonctionnement shématisé dans le diagramme UML e
 
 ![diagramme de séquence](./ressources/AOCseqM3.png "diagramme de séquence")
 
-J'ai pu programmer la mise en place du PC ActiveObject, l'application de la stratégie de diffusion atomique ainsi que les tests pour cette stratégie.
+J'ai pu programmer la mise en place du PC ActiveObject, l'application de la stratégie de diffusion atomique ainsi que les tests pour cette stratégie. Pour le lancer, il suffit de run le fichier "Main" dans /src/code et pour le tester on peut lancer le fichier de tests "TestAlgoAtomique" dans /src/tests.
