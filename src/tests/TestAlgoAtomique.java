@@ -33,13 +33,13 @@ class TestAlgoAtomique {
         cap1.attach(can2);
         cap1.attach(can3);
 
+        int mySize = ((int)(Math.random()*5)+1);
         ArrayList<Integer> res = new ArrayList<>();
-        res.add(1);
-        res.add(2);
-        res.add(3);
-        res.add(4);
-        res.add(5);
-        res.add(6);
+        for(Integer c=1; c<=mySize; c++){
+            res.add(c);
+        }
+        System.out.println("taille attendue : "+mySize);
+        System.out.println("reference : "+res);
 
         final ScheduledFuture<?> runTick = exec.scheduleAtFixedRate(cap1::tick, 0, 500, TimeUnit.MILLISECONDS);
         exec.schedule(
@@ -49,7 +49,7 @@ class TestAlgoAtomique {
 
         final ScheduledFuture<?> runTick2 = exec.scheduleAtFixedRate(
                 () -> {
-                    if ((cap1.valeur) == (int) 6) {
+                    if ((cap1.valeur) == mySize) {
                         runTick.cancel(true);
                     }
                 }, 0, 500, TimeUnit.MILLISECONDS);
@@ -85,14 +85,13 @@ class TestAlgoAtomique {
         cap1.attach(can2);
         cap1.attach(can3);
 
+        int mySizeBis = ((int)(Math.random()*5)+1);
         ArrayList<Integer> res = new ArrayList<>();
-        res.add(1);
-        res.add(2);
-        res.add(3);
-        res.add(4);
-        res.add(5);
-        res.add(6);
-        res.add(7);
+        for(Integer d=1; d<=(mySizeBis+1); d++){
+            res.add(d);
+        }
+        System.out.println("taille attendue : "+mySizeBis);
+        System.out.println("reference : "+res);
 
         final ScheduledFuture<?> runTick = exec.scheduleAtFixedRate(cap1::tick, 0, 500, TimeUnit.MILLISECONDS);
         exec.schedule(
@@ -102,7 +101,7 @@ class TestAlgoAtomique {
 
         final ScheduledFuture<?> runTick2 = exec.scheduleAtFixedRate(
                 () -> {
-                    if ((cap1.valeur) == (int) 6) {
+                    if ((cap1.valeur) == mySizeBis) {
                         runTick.cancel(true);
                     }
                 }, 0, 500, TimeUnit.MILLISECONDS);
